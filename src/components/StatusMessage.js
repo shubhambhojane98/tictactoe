@@ -10,11 +10,16 @@ const StatusMessage = ({winner ,current}) => {
 const  noNextMove = current.board.every(el => el !== null );
         // Conditional rendering
     return (
-        <h2>
-            {winner && `Winner is ${winner}`}
-            {!winner && !noNextMove &&`Next player is ${current.isXNext ? 'X' : 'O'}`}
-            {!winner && noNextMove && 'X and O tied' }
-        </h2>
+        <div className="status-message">
+            {winner && <>Winner is {''} 
+            <span className={winner === 'X' ? 'text-green' : 'text-orange'}>
+                {winner}
+                </span>
+                </>
+                }
+            {!winner &&  !noNextMove && <>Next player is <span className={current.isXNext ? 'text-greenn' : 'text-orange'}>{current.isXNext ? 'X' : 'O'}{''}</span> </>}
+            {!winner &&  noNextMove && <> <span className="text-green">X</span> <span className="text-orange">O</span> tied </> }
+        </div>
     )
 }
 

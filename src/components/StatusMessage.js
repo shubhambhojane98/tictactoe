@@ -7,10 +7,8 @@ const StatusMessage = ({winner ,current}) => {
 // ? `Winner is ${winner}`	
 // : `Next player is ${current.isXNext ? 'X' : 'O'}`;
 
-const  noNextMove = current.board.every(el => 
-    el !== null 
-);
-
+const  noNextMove = current.board.every(el => el !== null );
+        // Conditional rendering
     return (
         <h2>
             {winner && `Winner is ${winner}`}
